@@ -37,8 +37,7 @@ class WorkoutListModel: WorkoutListModelInterface {
         persistence?.save(workout: workout)
         delegate?.dataRefreshed()
     }
-    
-    
+
     
 }
 

@@ -255,7 +255,10 @@
                                                 <rect key="frame" x="176.5" y="0.0" width="161.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="caloriesEdited:" destination="fMg-gI-W36" eventType="editingChanged" id="xZR-I7-9f4"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -285,6 +288,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addWorkoutButton" destination="Hiu-Rb-Nfl" id="B2l-4G-xEX"/>
                         <outlet property="caloriesTextField" destination="0Rb-un-gW3" id="dYa-Zw-aYk"/>
                         <outlet property="dateField" destination="HyX-F8-IBj" id="bQv-km-X7l"/>
                         <outlet property="nameField" destination="eGQ-v3-Ysj" id="ofw-Ol-Uij"/>

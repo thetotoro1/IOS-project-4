@@ -25,6 +25,7 @@
 		03D70F651F15E00500DADA20 /* ApplicationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D70F641F15E00500DADA20 /* ApplicationSession.swift */; };
 		03D70F6A1F15E11400DADA20 /* WorkoutPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D70F691F15E11400DADA20 /* WorkoutPersistence.swift */; };
 		03D70F6C1F15E41900DADA20 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D70F6B1F15E41900DADA20 /* Workout.swift */; };
+		4AF3A22A1F23BF480060AE36 /* WorkoutCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3A2291F23BF480060AE36 /* WorkoutCreationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		03D70F641F15E00500DADA20 /* ApplicationSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSession.swift; sourceTree = "<group>"; };
 		03D70F691F15E11400DADA20 /* WorkoutPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPersistence.swift; sourceTree = "<group>"; };
 		03D70F6B1F15E41900DADA20 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		4AF3A2291F23BF480060AE36 /* WorkoutCreationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCreationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +87,11 @@
 				03D70F681F15E0D200DADA20 /* Utilities */,
 				038B5F251F0DECFB0057730A /* Main.storyboard */,
 				038B5F231F0DECFB0057730A /* WorkoutListViewController.swift */,
-				0365D6BC1F14841D00678AF0 /* WorkoutListTableViewCell.swift */,
-				038B5F341F0DEFB80057730A /* WorkoutCreationViewController.swift */,
-				03D70F6B1F15E41900DADA20 /* Workout.swift */,
 				0365D6BA1F147F7F00678AF0 /* WorkoutListModel.swift */,
+				038B5F341F0DEFB80057730A /* WorkoutCreationViewController.swift */,
+				4AF3A2291F23BF480060AE36 /* WorkoutCreationModel.swift */,
+				03D70F6B1F15E41900DADA20 /* Workout.swift */,
+				0365D6BC1F14841D00678AF0 /* WorkoutListTableViewCell.swift */,
 				038B5F331F0DEDAD0057730A /* Supporting Files */,
 			);
 			path = Project4;
@@ -219,6 +222,7 @@
 				038B5F241F0DECFB0057730A /* WorkoutListViewController.swift in Sources */,
 				03D70F5D1F15DC9200DADA20 /* PersistenceProtocols.swift in Sources */,
 				0365D6B91F147B2F00678AF0 /* Utilities & Extensions.swift in Sources */,
+				4AF3A22A1F23BF480060AE36 /* WorkoutCreationModel.swift in Sources */,
 				038B5F221F0DECFB0057730A /* AppDelegate.swift in Sources */,
 				0365D6BD1F14841D00678AF0 /* WorkoutListTableViewCell.swift in Sources */,
 				03D70F651F15E00500DADA20 /* ApplicationSession.swift in Sources */,

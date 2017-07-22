@@ -10,6 +10,8 @@ class WorkoutCreationViewController: UIViewController {
 
     weak var delegate: WorkoutCreationViewControllerDelegate?
     
+    fileprivate var model = WorkoutCreationModel()
+    
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var dateField: UITextField!
     @IBOutlet private weak var minutesLabel: UILabel!
@@ -55,17 +57,17 @@ class WorkoutCreationViewController: UIViewController {
         timePickerStart = UIDatePicker()
         timePickerStart.datePickerMode = .time
         timePickerStart.addTarget(self, action: #selector(timeStartValueChanged), for: .valueChanged)
-        
-        //configure time text field
         timeStartTextField.inputView = timePickerStart
+
+        
         
         //Configure time end picker
         timePickerEnd = UIDatePicker()
         timePickerEnd.datePickerMode = .time
         timePickerEnd.addTarget(self, action: #selector(timeEndValueChanged), for: .valueChanged)
-        
-        //configure time text field
         timeEndTextField.inputView = timePickerEnd
+
+        
 
         //Configure starting text for start/end time
         let dateFormatter = DateFormatter()
@@ -91,6 +93,9 @@ class WorkoutCreationViewController: UIViewController {
         tappableBackgroundView.addGestureRecognizer(tapGestureRecognizer)
         tappableBackgroundView.isHidden = true
         
+        //turn off workout button
+        addWorkoutButton.isEnabled = false
+        
         // Configure delegates
         nameField.delegate = self
         dateField.delegate = self
@@ -98,16 +103,16 @@ class WorkoutCreationViewController: UIViewController {
         timeEndTextField.delegate = self
     }
     
-    @IBAction private func minutesValueChanged(_ sender: UIStepper) {
-        minutesLabel.text = "\(Int(sender.value))"
-    }
-    
+//    @IBAction private func minutesValueChanged(_ sender: UIStepper) {
+//        minutesLabel.text = "\(Int(sender.value))"
+//    }
+ 
     
 
     
     @IBAction private func addWorkoutButtonTapped(_ sender: UIButton) {
-        let name = nameField.text ?? "No Name"
-        
+        var name = nameField.text ?? ""
+        if name == "" { name = "No Name" }
 //        let duration = Int(minutesStepper.value)
         let date = datePicker.date
 //        let isHighIntensity = highIntensitySwitch.isOn
@@ -121,6 +126,10 @@ class WorkoutCreationViewController: UIViewController {
         
         delegate?.save(workout: workout)
         let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func caloriesEdited(_ sender: UITextField) {
+        checkValidInputs()
     }
     
     @objc private func dateValueChanged() {
@@ -138,6 +147,8 @@ class WorkoutCreationViewController: UIViewController {
         let dateString = dateFormatter.string(from: date)
         
         timeStartTextField.text = dateString
+        
+        checkValidInputs()
     }
     
     
@@ -152,6 +163,8 @@ class WorkoutCreationViewController: UIViewController {
         let dateString = dateFormatter.string(from: date)
         
         timeEndTextField.text = dateString
+        
+        checkValidInputs()
     }
     
     @objc private func backgroundTapped() {
@@ -161,6 +174,21 @@ class WorkoutCreationViewController: UIViewController {
         tappableBackgroundView.isHidden = true
     }
 
+    func checkValidInputs(){
+        
+        guard let cpm = caloriesTextField.text else {
+            addWorkoutButton.isEnabled = false
+            return
+        }
+        
+        if model.checkDuration(from: timePickerStart.date, to: timePickerEnd.date) && model.checkCaloriesPerMinuite(caloriesPerMinute: cpm) {
+            addWorkoutButton.isEnabled = true
+        }
+        else {
+            addWorkoutButton.isEnabled = false
+        }
+        
+    }
 
 }
 
