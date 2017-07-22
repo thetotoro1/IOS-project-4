@@ -25,21 +25,13 @@ extension Workout {
             let id = UUID(uuidString: idString),
             let name = dict["name"] as? String,
             let timeInterval = dict["date"] as? TimeInterval,
-            let duration = dict["duration"] as? Int
+            let duration = dict["duration"] as? Int,
+            let calories = dict["calories"] as? Int
         else {
-            print("Error in first half")
+            print("😤error in createFrom")
             return nil
         }
-        
-        
-        
-//        guard
-//            let calories = dict["calPerMin"] as? Int
-//        else {
-//            print("error in second half")
-//            return nil
-//        }
         let date = Date(timeIntervalSince1970: timeInterval)
-        return Workout(id: id, name: name, date: date, duration: duration, calories: 10)
+        return Workout(id: id, name: name, date: date, duration: duration, calories: calories)
     }
 }

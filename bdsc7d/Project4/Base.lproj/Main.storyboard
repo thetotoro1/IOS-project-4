@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6q-3H-OSK" id="Q2V-gf-eRL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iCw-lo-iXT" userLabel="Cell Stack View">
@@ -90,16 +90,52 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-lT-RSC" userLabel="Sort View">
+                                <rect key="frame" x="55.5" y="236" width="262.5" height="195"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dc8-be-ahN" userLabel="Sort Stack View">
+                                        <rect key="frame" x="54.5" y="23" width="153" height="150"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-7i-zTi">
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
+                                                <state key="normal" title="Date (ascending)"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk4-Y4-Lun" userLabel="Date (descending)">
+                                                <rect key="frame" x="0.0" y="40" width="153" height="30"/>
+                                                <state key="normal" title="Date (descending)"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFG-jT-syo" userLabel="Calories (descending)">
+                                                <rect key="frame" x="0.0" y="80" width="153" height="30"/>
+                                                <state key="normal" title="Calories (descending)"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-ok-QS2">
+                                                <rect key="frame" x="0.0" y="120" width="153" height="30"/>
+                                                <state key="normal" title="Duration (descending)"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8204420576" green="0.81874087299999998" blue="0.85520563469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Dc8-be-ahN" firstAttribute="centerY" secondItem="hHd-lT-RSC" secondAttribute="centerY" id="3Iw-PN-1HU"/>
+                                    <constraint firstAttribute="height" secondItem="Dc8-be-ahN" secondAttribute="height" multiplier="1.3" id="6dT-3n-oqS"/>
+                                    <constraint firstItem="Dc8-be-ahN" firstAttribute="centerX" secondItem="hHd-lT-RSC" secondAttribute="centerX" id="CEa-rf-bEm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hHd-lT-RSC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Kc-DQ-YiS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T1C-ow-IeH" secondAttribute="trailing" id="6jh-WF-CtS"/>
                             <constraint firstItem="T1C-ow-IeH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NaP-Rq-Qfh"/>
                             <constraint firstItem="T1C-ow-IeH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QWd-EA-wRl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T1C-ow-IeH" secondAttribute="bottom" id="SbO-pW-Dp3"/>
+                            <constraint firstItem="hHd-lT-RSC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="hXp-Nf-oWq"/>
+                            <constraint firstItem="hHd-lT-RSC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i0E-RW-qAK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Workout List" id="nlc-Pm-zJG">
+                        <barButtonItem key="leftBarButtonItem" title="Sort" id="Mzd-an-9eB" userLabel="Sort"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z5F-PG-zuh">
                             <connections>
                                 <segue destination="fMg-gI-W36" kind="show" id="378-u0-28O"/>
@@ -225,22 +261,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ec-W1-acc">
-                                <rect key="frame" x="137.5" y="376.5" width="100" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Add Workout"/>
-                                <connections>
-                                    <action selector="addWorkoutButtonTapped:" destination="fMg-gI-W36" eventType="touchUpInside" id="E2u-g1-gqe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="y71-Fu-ymN" firstAttribute="centerY" secondItem="H9t-9g-FSq" secondAttribute="centerY" multiplier="0.6" constant="50" id="4Qg-g1-Z7y"/>
                             <constraint firstItem="bIl-RY-iu1" firstAttribute="leading" secondItem="H9t-9g-FSq" secondAttribute="leading" id="4RH-jW-dTK"/>
                             <constraint firstItem="bIl-RY-iu1" firstAttribute="trailing" secondItem="H9t-9g-FSq" secondAttribute="trailing" id="IAu-hg-r4A"/>
-                            <constraint firstItem="0ec-W1-acc" firstAttribute="centerX" secondItem="H9t-9g-FSq" secondAttribute="centerX" id="c2m-tu-iw3"/>
-                            <constraint firstItem="0ec-W1-acc" firstAttribute="top" secondItem="y71-Fu-ymN" secondAttribute="bottom" constant="50" id="kkJ-Of-tBv"/>
                             <constraint firstItem="y71-Fu-ymN" firstAttribute="width" secondItem="H9t-9g-FSq" secondAttribute="width" multiplier="0.9" id="lRJ-JR-OjZ"/>
                             <constraint firstItem="je3-aJ-tzi" firstAttribute="top" secondItem="bIl-RY-iu1" secondAttribute="bottom" id="nBU-3X-V0o"/>
                             <constraint firstItem="y71-Fu-ymN" firstAttribute="centerX" secondItem="H9t-9g-FSq" secondAttribute="centerX" id="v0W-Mk-yc2"/>
@@ -248,7 +274,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addWorkoutButton" destination="0ec-W1-acc" id="2c9-q5-uhg"/>
                         <outlet property="dateField" destination="HyX-F8-IBj" id="bQv-km-X7l"/>
                         <outlet property="nameField" destination="eGQ-v3-Ysj" id="ofw-Ol-Uij"/>
                         <outlet property="tappableBackgroundView" destination="bIl-RY-iu1" id="sCE-2q-dyd"/>
