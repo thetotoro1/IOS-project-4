@@ -143,6 +143,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="sortView" destination="hHd-lT-RSC" id="VU9-Kq-ach"/>
                         <outlet property="tableView" destination="T1C-ow-IeH" id="wgc-oK-Udg"/>
                     </connections>
                 </viewController>
@@ -162,12 +163,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIl-RY-iu1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="y71-Fu-ymN" userLabel="Main Stack View">
-                                <rect key="frame" x="19" y="133" width="338" height="234"/>
+                                <rect key="frame" x="19" y="105.5" width="338" height="289"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-fo-7mQ" userLabel="Name Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
@@ -203,7 +200,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="94L-Sp-qRR">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="94L-Sp-qRR" userLabel="Time Stack View">
                                         <rect key="frame" x="0.0" y="110" width="338" height="69"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8Bk-RZ-jSA" userLabel="Start Time Stack View">
@@ -220,6 +217,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="timeStartValueChanged:" destination="fMg-gI-W36" eventType="valueChanged" id="FRw-Z9-Nv8"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -259,8 +259,19 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hiu-Rb-Nfl">
+                                        <rect key="frame" x="0.0" y="259" width="338" height="30"/>
+                                        <state key="normal" title="Add Workout"/>
+                                        <connections>
+                                            <action selector="addWorkoutButtonTapped:" destination="fMg-gI-W36" eventType="touchUpInside" id="aMI-NE-n3g"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIl-RY-iu1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -274,9 +285,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="caloriesTextField" destination="0Rb-un-gW3" id="dYa-Zw-aYk"/>
                         <outlet property="dateField" destination="HyX-F8-IBj" id="bQv-km-X7l"/>
                         <outlet property="nameField" destination="eGQ-v3-Ysj" id="ofw-Ol-Uij"/>
                         <outlet property="tappableBackgroundView" destination="bIl-RY-iu1" id="sCE-2q-dyd"/>
+                        <outlet property="timeEndTextField" destination="7Cu-g8-UnJ" id="ScN-HF-Pvo"/>
+                        <outlet property="timeStartTextField" destination="yMY-vA-TZG" id="qR3-v8-tWw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCN-Yl-3w7" userLabel="First Responder" sceneMemberID="firstResponder"/>

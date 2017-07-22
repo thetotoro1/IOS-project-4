@@ -6,6 +6,8 @@ class WorkoutListViewController: UIViewController {
 
     @IBOutlet weak fileprivate var tableView: UITableView!
     
+    @IBOutlet weak var sortView: UIView!
+    
     fileprivate var model: WorkoutListModelInterface = WorkoutListModel()
     
     override func viewDidLoad() {
@@ -13,6 +15,7 @@ class WorkoutListViewController: UIViewController {
         model.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 64
+        sortView.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

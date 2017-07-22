@@ -38,6 +38,8 @@ class WorkoutListModel: WorkoutListModelInterface {
         delegate?.dataRefreshed()
     }
     
+    
+    
 }
 
 
