@@ -117,10 +117,9 @@ class WorkoutCreationViewController: UIViewController {
         let date = datePicker.date
 //        let isHighIntensity = highIntensitySwitch.isOn
         
+        let duration = Int(timePickerEnd.date.timeIntervalSince(timePickerStart.date).rounded(.up)) / 60
         
-        //For testing
-        let duration = 10
-        let calories = 10
+        let calories = Int(caloriesTextField.text!)! * duration
         
         let workout = Workout(id: UUID(), name: name, date: date, duration: duration, calories: calories)
         

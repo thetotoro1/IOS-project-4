@@ -8,7 +8,9 @@ class WorkoutCreationModel {
 
         let timeDifference = Int(endDate.timeIntervalSince(startDate).rounded(.up))
         
-        if timeDifference < 2 {
+        print(timeDifference / 60)
+        
+        if timeDifference / 60 < 2 {
             return false
         }
         
