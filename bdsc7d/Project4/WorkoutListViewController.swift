@@ -20,7 +20,6 @@ class WorkoutListViewController: UIViewController {
     }
     
     @IBAction func sortButtonPressed(_ sender: UIBarButtonItem) {
-        print(tableView.numberOfRows(inSection: 0))
         if tableView.numberOfRows(inSection: 0) >= 1 {
             sortView.isHidden = false
         }

@@ -44,14 +44,15 @@ class WorkoutListModel: WorkoutListModelInterface {
         
         switch sortType {
         case .dataAscending:
-            self.workouts.sort{  $0.calories > $1.calories  }
-        case .dateDescending:
-            self.workouts.sort{  }
-        case .duration:
-            self.workouts.sort{ }
-        case.calories:
-            self.workouts.sort{ }
+            self.workouts.sort{  $0.date <= $1.date}
 
+        case .dateDescending:
+            self.workouts.sort{  $0.date > $1.date}
+        case .duration:
+            self.workouts.sort{  $0.duration > $1.duration  }
+        case.calories:
+            self.workouts.sort{ $0.calories > $1.calories }
+        }
         
     }
     
