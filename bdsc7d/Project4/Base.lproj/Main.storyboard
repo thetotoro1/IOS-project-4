@@ -99,18 +99,30 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-7i-zTi">
                                                 <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
                                                 <state key="normal" title="Date (ascending)"/>
+                                                <connections>
+                                                    <action selector="sortDateAscending:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDR-Uu-76b"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk4-Y4-Lun" userLabel="Date (descending)">
                                                 <rect key="frame" x="0.0" y="40" width="153" height="30"/>
                                                 <state key="normal" title="Date (descending)"/>
+                                                <connections>
+                                                    <action selector="sortDateDescending:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kPU-ue-NAk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFG-jT-syo" userLabel="Calories (descending)">
                                                 <rect key="frame" x="0.0" y="80" width="153" height="30"/>
                                                 <state key="normal" title="Calories (descending)"/>
+                                                <connections>
+                                                    <action selector="sortCalories:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y2g-q3-Y4J"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-ok-QS2">
                                                 <rect key="frame" x="0.0" y="120" width="153" height="30"/>
                                                 <state key="normal" title="Duration (descending)"/>
+                                                <connections>
+                                                    <action selector="sortDuration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aOB-39-jGA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -135,7 +147,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Workout List" id="nlc-Pm-zJG">
-                        <barButtonItem key="leftBarButtonItem" title="Sort" id="Mzd-an-9eB" userLabel="Sort"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sort" id="Mzd-an-9eB" userLabel="Sort">
+                            <connections>
+                                <action selector="sortButtonPressed:" destination="BYZ-38-t0r" id="PAA-6s-RKr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z5F-PG-zuh">
                             <connections>
                                 <segue destination="fMg-gI-W36" kind="show" id="378-u0-28O"/>

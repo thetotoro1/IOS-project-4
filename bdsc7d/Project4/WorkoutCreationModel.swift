@@ -7,9 +7,7 @@ class WorkoutCreationModel {
     func checkDuration(from startDate: Date, to endDate: Date) -> Bool {
 
         let timeDifference = Int(endDate.timeIntervalSince(startDate).rounded(.up))
-        
-        print(timeDifference / 60)
-        
+                
         if timeDifference / 60 < 2 {
             return false
         }

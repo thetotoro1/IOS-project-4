@@ -10,6 +10,7 @@ protocol WorkoutListModelInterface {
     var count: Int { get }
     func workout(atIndex index: Int) -> Workout?
     func save(workout: Workout)
+    func sortWorkouts(sortType: sortType)
 }
 
 class WorkoutListModel: WorkoutListModelInterface {
@@ -38,6 +39,21 @@ class WorkoutListModel: WorkoutListModelInterface {
         delegate?.dataRefreshed()
     }
 
+    
+    func sortWorkouts(sortType: sortType){
+        
+        switch sortType {
+        case .dataAscending:
+            self.workouts.sort{  $0.calories > $1.calories  }
+        case .dateDescending:
+            self.workouts.sort{  }
+        case .duration:
+            self.workouts.sort{ }
+        case.calories:
+            self.workouts.sort{ }
+
+        
+    }
     
 }
 

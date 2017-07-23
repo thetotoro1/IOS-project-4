@@ -1,6 +1,10 @@
 
 import Foundation
 
+enum sortType{
+    case dataAscending, dateDescending, duration, calories
+}
+
 struct Workout {
     let id: UUID
     let name: String

@@ -101,6 +101,8 @@ class WorkoutCreationViewController: UIViewController {
         dateField.delegate = self
         timeStartTextField.delegate = self
         timeEndTextField.delegate = self
+        caloriesTextField.delegate = self
+        
     }
     
 //    @IBAction private func minutesValueChanged(_ sender: UIStepper) {
